@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="evan.adder" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Adder</name>
+    <js-module name="Adder" src="www/Adder.js">
+        <clobbers target="cordova.plugins.Adder" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Adder">
+              <param name="android-package" value="evan.adder.Adder"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*"/>
+        <source-file src="src/android/Adder.java" target-dir="src/evan/adder/Adder"/>
+    </platform>
+</plugin>

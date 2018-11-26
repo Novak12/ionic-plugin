@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
-declare var AndroidToast: any;
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,17 +18,6 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      
-      var androidToast = new AndroidToast();
-            androidToast.show(
-                'This is some nice toast popup!',
-                function(msg) {
-                    console.log(msg);
-                },
-                function(err) {
-                    console.log(err);
-                }
-            );
-    });
+    })
   }
 }
